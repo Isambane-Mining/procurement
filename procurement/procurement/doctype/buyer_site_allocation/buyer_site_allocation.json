@@ -29,7 +29,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-02-21 15:24:28.260533",
+ "modified": "2026-10-08 14:42:23.426176",
  "modified_by": "Administrator",
  "module": "Procurement",
  "name": "Buyer Site Allocation",
@@ -61,7 +61,6 @@
    "write": 1
   },
   {
-   "create": 1,
    "email": 1,
    "export": 1,
    "print": 1,
@@ -69,8 +68,7 @@
    "report": 1,
    "role": "Procurement Admin",
    "select": 1,
-   "share": 1,
-   "write": 1
+   "share": 1
   },
   {
    "email": 1,
