@@ -1,0 +1,284 @@
+{
+ "actions": [],
+ "autoname": "naming_series:",
+ "creation": "2026-10-15 15:00:00.000000",
+ "default_print_format": "Contractor SLA Termination",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "contractor_sla",
+  "initiated_by",
+  "termination_ground",
+  "non_conformance",
+  "column_break_t",
+  "supplier",
+  "supplier_name",
+  "company",
+  "branch",
+  "section_dates",
+  "notice_date",
+  "column_break_dates",
+  "effective_date",
+  "column_break_dates2",
+  "notice_days",
+  "section_reason",
+  "reason",
+  "signed_notice",
+  "section_close_out",
+  "company_property_returned",
+  "site_access_revoked",
+  "column_break_close",
+  "final_invoice_settled",
+  "close_out_notes",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "SLT-.YYYY.-",
+   "default": "SLT-.YYYY.-",
+   "hidden": 1,
+   "reqd": 1,
+   "no_copy": 1,
+   "print_hide": 1
+  },
+  {
+   "fieldname": "contractor_sla",
+   "fieldtype": "Link",
+   "label": "Contractor SLA",
+   "options": "Contractor SLA",
+   "reqd": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "initiated_by",
+   "fieldtype": "Select",
+   "label": "Initiated By",
+   "options": "Company\nContractor\nMutual",
+   "default": "Company",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "termination_ground",
+   "fieldtype": "Select",
+   "label": "Ground for Termination",
+   "options": "\nMaterial Breach Not Remedied\nRegulatory or Tax Non-Compliance\nUnauthorised Cession or Assignment\nContractor Insolvency\nOperation Suspended\nContractor Abandoned or Suspended Work\nFailure to Secure Insurance\nContractor Warranties Invalid\nFinancial Causes\nConvenience of the Company\nCompany Material Breach Not Remedied\nCompany Default on Site Access\nOperation Suspended by the Company\nCompany Insolvency\nCompany Cancelled or Suspended Operations\nForce Majeure Exceeding 21 Days\nMutual Agreement\nOther",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "non_conformance",
+   "fieldtype": "Link",
+   "label": "Non-Conformance",
+   "options": "Contractor Non-Conformance",
+   "description": "The non-conformance this termination escalates, if any."
+  },
+  {
+   "fieldname": "column_break_t",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "supplier",
+   "fieldtype": "Link",
+   "label": "Contractor (Supplier)",
+   "options": "Supplier",
+   "fetch_from": "contractor_sla.supplier",
+   "read_only": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "supplier_name",
+   "fieldtype": "Data",
+   "label": "Contractor Name",
+   "fetch_from": "contractor_sla.supplier_name",
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "fetch_from": "contractor_sla.company",
+   "read_only": 1
+  },
+  {
+   "fieldname": "branch",
+   "fieldtype": "Link",
+   "label": "Site",
+   "options": "Branch",
+   "fetch_from": "contractor_sla.branch",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_dates",
+   "fieldtype": "Section Break",
+   "label": "Notice"
+  },
+  {
+   "fieldname": "notice_date",
+   "fieldtype": "Date",
+   "label": "Notice Date",
+   "reqd": 1,
+   "default": "Today"
+  },
+  {
+   "fieldname": "column_break_dates",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "effective_date",
+   "fieldtype": "Date",
+   "label": "Effective Termination Date",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "column_break_dates2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "notice_days",
+   "fieldtype": "Int",
+   "label": "Notice Period (days)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_reason",
+   "fieldtype": "Section Break",
+   "label": "Reasons"
+  },
+  {
+   "fieldname": "reason",
+   "fieldtype": "Long Text",
+   "label": "Reasons for Termination",
+   "reqd": 1
+  },
+  {
+   "fieldname": "signed_notice",
+   "fieldtype": "Attach",
+   "label": "Signed Termination Notice / Agreement",
+   "no_copy": 1,
+   "description": "The notice as signed and delivered (or the signed mutual termination). Required to submit."
+  },
+  {
+   "fieldname": "section_close_out",
+   "fieldtype": "Section Break",
+   "label": "Close-Out",
+   "collapsible": 1,
+   "description": "Track the hand-back after termination; can be updated after submitting."
+  },
+  {
+   "fieldname": "company_property_returned",
+   "fieldtype": "Check",
+   "label": "Company Property Returned (incl. FRSC)",
+   "allow_on_submit": 1
+  },
+  {
+   "fieldname": "site_access_revoked",
+   "fieldtype": "Check",
+   "label": "Site Access Revoked",
+   "allow_on_submit": 1
+  },
+  {
+   "fieldname": "column_break_close",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "final_invoice_settled",
+   "fieldtype": "Check",
+   "label": "Final Invoice Settled",
+   "allow_on_submit": 1
+  },
+  {
+   "fieldname": "close_out_notes",
+   "fieldtype": "Small Text",
+   "label": "Close-Out Notes",
+   "allow_on_submit": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "options": "Contractor SLA Termination",
+   "no_copy": 1,
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 0,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2026-10-15 15:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Procurement",
+ "name": "Contractor SLA Termination",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "role": "System Manager",
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "share": 1,
+   "write": 1,
+   "amend": 1,
+   "cancel": 1,
+   "submit": 1,
+   "select": 1
+  },
+  {
+   "role": "Procurement Manager",
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "share": 1,
+   "write": 1,
+   "amend": 1,
+   "cancel": 1,
+   "submit": 1,
+   "select": 1
+  },
+  {
+   "role": "Procurement Admin",
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "select": 1,
+   "share": 1
+  },
+  {
+   "role": "Procurement User",
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "select": 1,
+   "share": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "supplier_name",
+ "track_changes": 1
+}

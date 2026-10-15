@@ -1,0 +1,90 @@
+{
+ "actions": [],
+ "creation": "2026-10-15 15:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "non_conformance",
+  "report_date",
+  "contractor_sla",
+  "category",
+  "severity",
+  "outcome",
+  "warning_level",
+  "valid_until"
+ ],
+ "fields": [
+  {
+   "fieldname": "non_conformance",
+   "fieldtype": "Link",
+   "label": "Non-Conformance",
+   "options": "Contractor Non-Conformance",
+   "in_list_view": 1,
+   "columns": 2
+  },
+  {
+   "fieldname": "report_date",
+   "fieldtype": "Date",
+   "label": "Date",
+   "in_list_view": 1,
+   "columns": 1
+  },
+  {
+   "fieldname": "contractor_sla",
+   "fieldtype": "Link",
+   "label": "SLA",
+   "options": "Contractor SLA",
+   "columns": 1
+  },
+  {
+   "fieldname": "category",
+   "fieldtype": "Data",
+   "label": "Category",
+   "in_list_view": 1,
+   "columns": 2
+  },
+  {
+   "fieldname": "severity",
+   "fieldtype": "Data",
+   "label": "Severity",
+   "in_list_view": 1,
+   "columns": 1
+  },
+  {
+   "fieldname": "outcome",
+   "fieldtype": "Data",
+   "label": "Outcome",
+   "in_list_view": 1,
+   "columns": 2
+  },
+  {
+   "fieldname": "warning_level",
+   "fieldtype": "Data",
+   "label": "Warning",
+   "in_list_view": 1,
+   "columns": 1
+  },
+  {
+   "fieldname": "valid_until",
+   "fieldtype": "Date",
+   "label": "Warning Valid Until",
+   "in_list_view": 1,
+   "columns": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 0,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-10-15 15:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Procurement",
+ "name": "Contractor Non-Conformance History",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

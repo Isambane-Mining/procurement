@@ -1,0 +1,291 @@
+{
+ "actions": [],
+ "autoname": "naming_series:",
+ "creation": "2026-10-15 15:00:00.000000",
+ "default_print_format": "Contractor Warning",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "non_conformance",
+  "warning_level",
+  "status",
+  "issue_date",
+  "valid_until",
+  "column_break_w",
+  "contractor_sla",
+  "supplier",
+  "supplier_name",
+  "company",
+  "issued_by",
+  "section_recipient",
+  "recipient",
+  "column_break_rec",
+  "recipient_email",
+  "section_details",
+  "details",
+  "corrective_action_required",
+  "remediation_due_date",
+  "consequence",
+  "section_ack",
+  "signed_acknowledgement",
+  "column_break_ack",
+  "acknowledged_on",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "CW-.YYYY.-",
+   "default": "CW-.YYYY.-",
+   "hidden": 1,
+   "reqd": 1,
+   "no_copy": 1,
+   "print_hide": 1
+  },
+  {
+   "fieldname": "non_conformance",
+   "fieldtype": "Link",
+   "label": "Non-Conformance",
+   "options": "Contractor Non-Conformance",
+   "reqd": 1
+  },
+  {
+   "fieldname": "warning_level",
+   "fieldtype": "Link",
+   "label": "Warning Level",
+   "options": "Contractor Warning Level",
+   "reqd": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Draft\nActive\nExpired\nCancelled",
+   "default": "Draft",
+   "read_only": 1,
+   "allow_on_submit": 1,
+   "no_copy": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "issue_date",
+   "fieldtype": "Date",
+   "label": "Issue Date",
+   "reqd": 1,
+   "default": "Today"
+  },
+  {
+   "fieldname": "valid_until",
+   "fieldtype": "Date",
+   "label": "Valid Until",
+   "read_only": 1,
+   "in_list_view": 1,
+   "description": "Issue Date plus the level's validity."
+  },
+  {
+   "fieldname": "column_break_w",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "contractor_sla",
+   "fieldtype": "Link",
+   "label": "Contractor SLA",
+   "options": "Contractor SLA",
+   "fetch_from": "non_conformance.contractor_sla",
+   "read_only": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "supplier",
+   "fieldtype": "Link",
+   "label": "Contractor (Supplier)",
+   "options": "Supplier",
+   "fetch_from": "non_conformance.supplier",
+   "read_only": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "supplier_name",
+   "fieldtype": "Data",
+   "label": "Contractor Name",
+   "fetch_from": "non_conformance.supplier_name",
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "fetch_from": "non_conformance.company",
+   "read_only": 1
+  },
+  {
+   "fieldname": "issued_by",
+   "fieldtype": "Link",
+   "label": "Issued By",
+   "options": "User",
+   "default": "__user"
+  },
+  {
+   "fieldname": "section_recipient",
+   "fieldtype": "Section Break",
+   "label": "Addressed To"
+  },
+  {
+   "fieldname": "recipient",
+   "fieldtype": "Data",
+   "label": "Contractor Representative"
+  },
+  {
+   "fieldname": "column_break_rec",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "recipient_email",
+   "fieldtype": "Data",
+   "label": "Representative Email",
+   "options": "Email"
+  },
+  {
+   "fieldname": "section_details",
+   "fieldtype": "Section Break",
+   "label": "Warning"
+  },
+  {
+   "fieldname": "details",
+   "fieldtype": "Long Text",
+   "label": "Non-Conformance",
+   "reqd": 1
+  },
+  {
+   "fieldname": "corrective_action_required",
+   "fieldtype": "Long Text",
+   "label": "Corrective Action Required",
+   "reqd": 1
+  },
+  {
+   "fieldname": "remediation_due_date",
+   "fieldtype": "Date",
+   "label": "Remediate By",
+   "reqd": 1
+  },
+  {
+   "fieldname": "consequence",
+   "fieldtype": "Small Text",
+   "label": "Consequence of Further Non-Conformance",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_ack",
+   "fieldtype": "Section Break",
+   "label": "Acknowledgement"
+  },
+  {
+   "fieldname": "signed_acknowledgement",
+   "fieldtype": "Attach",
+   "label": "Signed Acknowledgement / Proof of Delivery",
+   "no_copy": 1,
+   "description": "The warning signed by the contractor, or proof it was delivered. Required to submit."
+  },
+  {
+   "fieldname": "column_break_ack",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "acknowledged_on",
+   "fieldtype": "Date",
+   "label": "Acknowledged / Delivered On",
+   "no_copy": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "options": "Contractor Warning",
+   "no_copy": 1,
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 0,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2026-10-15 15:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Procurement",
+ "name": "Contractor Warning",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "role": "System Manager",
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "share": 1,
+   "write": 1,
+   "amend": 1,
+   "cancel": 1,
+   "submit": 1,
+   "select": 1
+  },
+  {
+   "role": "Procurement Manager",
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "share": 1,
+   "write": 1,
+   "amend": 1,
+   "cancel": 1,
+   "submit": 1,
+   "select": 1
+  },
+  {
+   "role": "Procurement Admin",
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "select": 1,
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "role": "Procurement User",
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "select": 1,
+   "share": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "supplier_name",
+ "track_changes": 1
+}

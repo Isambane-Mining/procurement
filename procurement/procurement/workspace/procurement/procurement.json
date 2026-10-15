@@ -6,7 +6,7 @@
    "label": "Pending Purchase Requisitions"
   }
  ],
- "content": "[{\"id\":\"HJvWuElKEE\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Procurement</span>\",\"col\":12}},{\"id\":\"M7Puzj4A7d\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Pending Purchase Requisitions\",\"col\":12}},{\"id\":\"ksNWNnzsgN\",\"type\":\"card\",\"data\":{\"card_name\":\"Purchasing\",\"col\":4}},{\"id\":\"wzEUYZV0P3\",\"type\":\"card\",\"data\":{\"card_name\":\"ESD Procurement\",\"col\":4}},{\"id\":\"e5h0ObKIdm\",\"type\":\"card\",\"data\":{\"card_name\":\"Setup\",\"col\":4}},{\"id\":\"xlS3rxQSut\",\"type\":\"card\",\"data\":{\"card_name\":\"Supplier Compliance and Vetting\",\"col\":4}}]",
+ "content": "[{\"id\":\"HJvWuElKEE\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Procurement</span>\",\"col\":12}},{\"id\":\"M7Puzj4A7d\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Pending Purchase Requisitions\",\"col\":12}},{\"id\":\"ksNWNnzsgN\",\"type\":\"card\",\"data\":{\"card_name\":\"Purchasing\",\"col\":4}},{\"id\":\"wzEUYZV0P3\",\"type\":\"card\",\"data\":{\"card_name\":\"ESD Procurement\",\"col\":4}},{\"id\":\"xlS3rxQSut\",\"type\":\"card\",\"data\":{\"card_name\":\"Supplier Compliance and Vetting\",\"col\":4}},{\"id\":\"e5h0ObKIdm\",\"type\":\"card\",\"data\":{\"card_name\":\"Setup\",\"col\":4}},{\"id\":\"slaHdr0001\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Service Level Agreements</span>\",\"col\":12}},{\"id\":\"slaShct001\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"SLA Dashboard\",\"col\":12}},{\"id\":\"slaNum0001\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Active Contractor SLAs\",\"col\":4}},{\"id\":\"slaNum0002\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Contractor SLAs Expiring Soon\",\"col\":4}},{\"id\":\"slaNum0003\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Contractor SLAs Awaiting Signature\",\"col\":4}},{\"id\":\"slaNum0004\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Open Contractor Non-Conformances\",\"col\":4}},{\"id\":\"slaCard001\",\"type\":\"card\",\"data\":{\"card_name\":\"Service Level Agreements\",\"col\":4}},{\"id\":\"slaCard002\",\"type\":\"card\",\"data\":{\"card_name\":\"Contractor Performance\",\"col\":4}}]",
  "creation": "2024-07-27 20:02:09.921282",
  "custom_blocks": [],
  "docstatus": 0,
@@ -200,7 +200,7 @@
    "is_query_report": 0,
    "label": "Parts Requisition",
    "link_count": 0,
-   "link_to": "Parts Requisition Form",
+   "link_to": "Parts Requisition",
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
@@ -224,13 +224,148 @@
    "link_type": "Report",
    "onboard": 0,
    "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Service Level Agreements",
+   "link_count": 6,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Contractor SLA Dashboard",
+   "link_count": 0,
+   "link_to": "sla-dashboard",
+   "link_type": "Page",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Contractor SLA",
+   "link_count": 0,
+   "link_to": "Contractor SLA",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Contractor SLA Register",
+   "link_count": 0,
+   "link_to": "Contractor SLA Register",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Contractor SLA Template",
+   "link_count": 0,
+   "link_to": "Contractor SLA Template",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Contractor SLA Clause Option",
+   "link_count": 0,
+   "link_to": "Contractor SLA Clause Option",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Contractor SLA Settings",
+   "link_count": 0,
+   "link_to": "Contractor SLA Settings",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Contractor Performance",
+   "link_count": 4,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Contractor Non-Conformance",
+   "link_count": 0,
+   "link_to": "Contractor Non-Conformance",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Contractor Warning",
+   "link_count": 0,
+   "link_to": "Contractor Warning",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Contractor SLA Termination",
+   "link_count": 0,
+   "link_to": "Contractor SLA Termination",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Contractor Warning Level",
+   "link_count": 0,
+   "link_to": "Contractor Warning Level",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
   }
  ],
- "modified": "2026-05-22 06:59:54.719563",
+ "modified": "2026-10-15 17:00:00.000000",
  "modified_by": "Administrator",
  "module": "Procurement",
  "name": "Procurement",
- "number_cards": [],
+ "number_cards": [
+  {
+   "label": "Active Contractor SLAs",
+   "number_card_name": "Active Contractor SLAs"
+  },
+  {
+   "label": "Contractor SLAs Expiring Soon",
+   "number_card_name": "Contractor SLAs Expiring Soon"
+  },
+  {
+   "label": "Contractor SLAs Awaiting Signature",
+   "number_card_name": "Contractor SLAs Awaiting Signature"
+  },
+  {
+   "label": "Open Contractor Non-Conformances",
+   "number_card_name": "Open Contractor Non-Conformances"
+  }
+ ],
  "owner": "Administrator",
  "parent_page": "Procurement",
  "public": 1,
@@ -250,7 +385,15 @@
   }
  ],
  "sequence_id": 41.0,
- "shortcuts": [],
+ "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "",
+   "label": "SLA Dashboard",
+   "link_to": "sla-dashboard",
+   "type": "Page"
+  }
+ ],
  "title": "Procurement",
  "type": "Workspace"
 }

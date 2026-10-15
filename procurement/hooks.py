@@ -35,6 +35,11 @@ doc_events = {
 		"before_submit": "procurement.procurement.doctype.purchase_requisition.purchase_requisition.validate_before_submit"
 	}
 }
+scheduler_events = {
+	"daily": [
+		"procurement.procurement.doctype.contractor_sla.contractor_sla.daily_sla_monitor",
+	]
+}
 standard_portal_menu_items = [
 	{
 		"title": "Open RFQs",

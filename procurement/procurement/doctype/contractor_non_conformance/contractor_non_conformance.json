@@ -1,0 +1,409 @@
+{
+ "actions": [],
+ "autoname": "naming_series:",
+ "creation": "2026-10-15 15:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "tab_details",
+  "naming_series",
+  "contractor_sla",
+  "status",
+  "column_break_nc",
+  "supplier",
+  "supplier_name",
+  "company",
+  "branch",
+  "responsible_manager",
+  "section_finding",
+  "report_date",
+  "reported_by",
+  "category",
+  "severity",
+  "column_break_finding",
+  "sla_reference",
+  "penalty_amount",
+  "currency",
+  "section_description",
+  "description",
+  "evidence",
+  "tab_remediation",
+  "corrective_actions",
+  "remediation_due_date",
+  "column_break_rem",
+  "remediation_verified_on",
+  "remediation_notes",
+  "tab_history",
+  "history",
+  "tab_outcome",
+  "outcome",
+  "warning",
+  "sla_termination",
+  "column_break_out",
+  "closed_on",
+  "closing_notes",
+  "overdue_notified_on",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "tab_details",
+   "fieldtype": "Tab Break",
+   "label": "Non-Conformance"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "NCR-.YYYY.-",
+   "default": "NCR-.YYYY.-",
+   "hidden": 1,
+   "reqd": 1,
+   "no_copy": 1,
+   "print_hide": 1
+  },
+  {
+   "fieldname": "contractor_sla",
+   "fieldtype": "Link",
+   "label": "Contractor SLA",
+   "options": "Contractor SLA",
+   "reqd": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Open\nRemediation\nClosed - Remediated\nClosed - No Further Action\nEscalated to Termination\nCancelled",
+   "default": "Open",
+   "read_only": 1,
+   "allow_on_submit": 1,
+   "no_copy": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "column_break_nc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "supplier",
+   "fieldtype": "Link",
+   "label": "Contractor (Supplier)",
+   "options": "Supplier",
+   "fetch_from": "contractor_sla.supplier",
+   "read_only": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "supplier_name",
+   "fieldtype": "Data",
+   "label": "Contractor Name",
+   "fetch_from": "contractor_sla.supplier_name",
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "fetch_from": "contractor_sla.company",
+   "read_only": 1
+  },
+  {
+   "fieldname": "branch",
+   "fieldtype": "Link",
+   "label": "Site",
+   "options": "Branch",
+   "fetch_from": "contractor_sla.branch",
+   "read_only": 1
+  },
+  {
+   "fieldname": "responsible_manager",
+   "fieldtype": "Link",
+   "label": "Responsible Manager",
+   "options": "User",
+   "fetch_from": "contractor_sla.responsible_manager",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_finding",
+   "fieldtype": "Section Break",
+   "label": "Finding"
+  },
+  {
+   "fieldname": "report_date",
+   "fieldtype": "Date",
+   "label": "Date of Non-Conformance",
+   "reqd": 1,
+   "default": "Today",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "reported_by",
+   "fieldtype": "Link",
+   "label": "Reported By",
+   "options": "User",
+   "default": "__user"
+  },
+  {
+   "fieldname": "category",
+   "fieldtype": "Select",
+   "label": "Category",
+   "options": "\nSafety\nEnvironmental\nService Delivery / Availability\nQuality of Work\nCompliance / Documentation\nConduct\nEquipment / Maintenance\nOther",
+   "reqd": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "severity",
+   "fieldtype": "Select",
+   "label": "Severity",
+   "options": "\nMinor\nMajor\nCritical",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "column_break_finding",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "sla_reference",
+   "fieldtype": "Data",
+   "label": "SLA Clause / Penalty Reference",
+   "description": "e.g. 7.2.11 PPE, or Annexure A Table 2 item 2"
+  },
+  {
+   "fieldname": "penalty_amount",
+   "fieldtype": "Currency",
+   "label": "Penalty Amount",
+   "options": "currency",
+   "description": "Penalty to deduct from the contractor's invoice, if any."
+  },
+  {
+   "fieldname": "currency",
+   "fieldtype": "Link",
+   "label": "Currency",
+   "options": "Currency",
+   "default": "ZAR",
+   "hidden": 1
+  },
+  {
+   "fieldname": "section_description",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Long Text",
+   "label": "Details of the Non-Conformance",
+   "reqd": 1
+  },
+  {
+   "fieldname": "evidence",
+   "fieldtype": "Table",
+   "label": "Evidence",
+   "options": "Contractor Non-Conformance Evidence"
+  },
+  {
+   "fieldname": "tab_remediation",
+   "fieldtype": "Tab Break",
+   "label": "Remediation"
+  },
+  {
+   "fieldname": "corrective_actions",
+   "fieldtype": "Table",
+   "label": "Corrective Actions",
+   "options": "Contractor Corrective Action",
+   "description": "What the contractor must do, and by when. A warning adds its required action here."
+  },
+  {
+   "fieldname": "remediation_due_date",
+   "fieldtype": "Date",
+   "label": "Remediation Due",
+   "read_only": 1,
+   "description": "The latest corrective action due date."
+  },
+  {
+   "fieldname": "column_break_rem",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "remediation_verified_on",
+   "fieldtype": "Date",
+   "label": "Remediation Verified On",
+   "description": "Set when the Company has confirmed every corrective action is done."
+  },
+  {
+   "fieldname": "remediation_notes",
+   "fieldtype": "Small Text",
+   "label": "Remediation Notes"
+  },
+  {
+   "fieldname": "tab_history",
+   "fieldtype": "Tab Break",
+   "label": "History"
+  },
+  {
+   "fieldname": "history",
+   "fieldtype": "Table",
+   "label": "Contractor's Previous Non-Conformances",
+   "options": "Contractor Non-Conformance History",
+   "read_only": 1,
+   "description": "Every earlier non-conformance for this contractor (all SLAs), refreshed on save."
+  },
+  {
+   "fieldname": "tab_outcome",
+   "fieldtype": "Tab Break",
+   "label": "Outcome"
+  },
+  {
+   "fieldname": "outcome",
+   "fieldtype": "Select",
+   "label": "Outcome",
+   "options": "\nWarning Issued\nRemediated\nNo Further Action\nTerminated",
+   "read_only": 1,
+   "allow_on_submit": 1,
+   "no_copy": 1
+  },
+  {
+   "fieldname": "warning",
+   "fieldtype": "Link",
+   "label": "Latest Warning",
+   "options": "Contractor Warning",
+   "read_only": 1,
+   "allow_on_submit": 1,
+   "no_copy": 1
+  },
+  {
+   "fieldname": "sla_termination",
+   "fieldtype": "Link",
+   "label": "Termination",
+   "options": "Contractor SLA Termination",
+   "read_only": 1,
+   "allow_on_submit": 1,
+   "no_copy": 1
+  },
+  {
+   "fieldname": "column_break_out",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "closed_on",
+   "fieldtype": "Date",
+   "label": "Closed On",
+   "read_only": 1,
+   "allow_on_submit": 1,
+   "no_copy": 1
+  },
+  {
+   "fieldname": "closing_notes",
+   "fieldtype": "Small Text",
+   "label": "Closing Notes",
+   "allow_on_submit": 1
+  },
+  {
+   "fieldname": "overdue_notified_on",
+   "fieldtype": "Date",
+   "label": "Overdue Notice Sent On",
+   "hidden": 1,
+   "read_only": 1,
+   "no_copy": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "options": "Contractor Non-Conformance",
+   "no_copy": 1,
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 0,
+ "is_submittable": 1,
+ "links": [
+  {
+   "group": "Process",
+   "link_doctype": "Contractor Warning",
+   "link_fieldname": "non_conformance"
+  },
+  {
+   "group": "Process",
+   "link_doctype": "Contractor SLA Termination",
+   "link_fieldname": "non_conformance"
+  }
+ ],
+ "modified": "2026-10-15 15:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Procurement",
+ "name": "Contractor Non-Conformance",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "role": "System Manager",
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "share": 1,
+   "write": 1,
+   "amend": 1,
+   "cancel": 1,
+   "submit": 1,
+   "select": 1
+  },
+  {
+   "role": "Procurement Manager",
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "share": 1,
+   "write": 1,
+   "amend": 1,
+   "cancel": 1,
+   "submit": 1,
+   "select": 1
+  },
+  {
+   "role": "Procurement Admin",
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "select": 1,
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "role": "Procurement User",
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "select": 1,
+   "share": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "search_fields": "supplier_name,contractor_sla,category",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "supplier_name",
+ "track_changes": 1
+}
