@@ -1,0 +1,60 @@
+{
+ "actions": [],
+ "creation": "2026-10-15 15:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "penalty_table",
+  "area",
+  "criteria",
+  "penalty"
+ ],
+ "fields": [
+  {
+   "fieldname": "penalty_table",
+   "fieldtype": "Data",
+   "label": "Table",
+   "in_list_view": 1,
+   "columns": 2,
+   "description": "Rows with the same Table print together under this caption."
+  },
+  {
+   "fieldname": "area",
+   "fieldtype": "Data",
+   "label": "Area",
+   "in_list_view": 1,
+   "columns": 2,
+   "description": "Optional; repeated areas merge into one cell."
+  },
+  {
+   "fieldname": "criteria",
+   "fieldtype": "Small Text",
+   "label": "Criteria / Description",
+   "in_list_view": 1,
+   "columns": 3
+  },
+  {
+   "fieldname": "penalty",
+   "fieldtype": "Small Text",
+   "label": "Penalty / Action",
+   "reqd": 1,
+   "in_list_view": 1,
+   "columns": 3
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 0,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-10-15 15:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Procurement",
+ "name": "Contractor SLA Penalty",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

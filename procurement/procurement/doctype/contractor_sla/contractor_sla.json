@@ -1,0 +1,704 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "autoname": "naming_series:",
+ "creation": "2026-10-15 15:00:00.000000",
+ "default_print_format": "Contractor SLA",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "tab_agreement",
+  "naming_series",
+  "sla_title",
+  "sla_template",
+  "status",
+  "column_break_head",
+  "company",
+  "supplier",
+  "supplier_name",
+  "branch",
+  "project",
+  "section_scope",
+  "scope_of_services",
+  "operation_name",
+  "operation_definition",
+  "column_break_scope",
+  "pricing_basis",
+  "clause_options",
+  "section_term",
+  "duration_basis",
+  "start_date",
+  "end_date",
+  "mobilisation_days",
+  "column_break_term",
+  "responsible_manager",
+  "responsible_manager_name",
+  "renewal_of",
+  "renewed_by",
+  "amended_from",
+  "tab_parties",
+  "section_company",
+  "company_registration_no",
+  "company_address",
+  "column_break_company",
+  "company_representative",
+  "company_representative_email",
+  "section_supplier",
+  "supplier_registration_no",
+  "supplier_address",
+  "column_break_supplier",
+  "supplier_representative",
+  "supplier_representative_email",
+  "tab_services",
+  "services",
+  "section_milestones",
+  "milestones",
+  "section_rates",
+  "rates",
+  "total_monthly_value",
+  "currency",
+  "section_equipment",
+  "equipment",
+  "section_special_terms",
+  "special_terms",
+  "tab_penalties",
+  "penalties",
+  "tab_wording",
+  "agreement_preview",
+  "rendered_agreement",
+  "tab_signatures",
+  "signature_status",
+  "sent_for_signature_on",
+  "signed_copy",
+  "section_contractor_signature",
+  "contractor_signed_on",
+  "column_break_csig",
+  "contractor_signed_at",
+  "section_company_signature",
+  "company_signed_on",
+  "column_break_cosig",
+  "company_signed_at",
+  "section_termination",
+  "terminated_on",
+  "sla_termination",
+  "column_break_term_info",
+  "termination_reason",
+  "section_notices",
+  "expiry_notices_sent",
+  "last_outstanding_notice_on"
+ ],
+ "fields": [
+  {
+   "fieldname": "tab_agreement",
+   "fieldtype": "Tab Break",
+   "label": "Agreement"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "SLA-.YYYY.-",
+   "default": "SLA-.YYYY.-",
+   "hidden": 1,
+   "reqd": 1,
+   "no_copy": 1,
+   "print_hide": 1
+  },
+  {
+   "fieldname": "sla_title",
+   "fieldtype": "Data",
+   "label": "Title",
+   "reqd": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 0,
+   "description": "Short name for lists and notices, e.g. Lighting Plants - MMS"
+  },
+  {
+   "fieldname": "sla_template",
+   "fieldtype": "Link",
+   "label": "SLA Template",
+   "options": "Contractor SLA Template",
+   "reqd": 1
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Draft\nOutstanding\nUpcoming\nActive\nExpiring Soon\nExpired\nRenewed\nTerminated\nCancelled",
+   "default": "Draft",
+   "read_only": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "allow_on_submit": 1,
+   "no_copy": 1,
+   "print_hide": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "column_break_head",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1,
+   "in_standard_filter": 1,
+   "remember_last_selected_value": 1
+  },
+  {
+   "fieldname": "supplier",
+   "fieldtype": "Link",
+   "label": "Contractor (Supplier)",
+   "options": "Supplier",
+   "reqd": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "supplier_name",
+   "fieldtype": "Data",
+   "label": "Contractor Name",
+   "fetch_from": "supplier.supplier_name",
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "branch",
+   "fieldtype": "Link",
+   "label": "Site",
+   "options": "Branch",
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "label": "Project",
+   "options": "Project"
+  },
+  {
+   "fieldname": "section_scope",
+   "fieldtype": "Section Break",
+   "label": "Scope"
+  },
+  {
+   "fieldname": "scope_of_services",
+   "fieldtype": "Data",
+   "label": "Scope of Services",
+   "reqd": 1,
+   "description": "Completes 'For the ... at the [Operation] operation of the COMPANY', e.g. provision and maintenance of Lighting Plants"
+  },
+  {
+   "fieldname": "operation_name",
+   "fieldtype": "Data",
+   "label": "Operation",
+   "reqd": 1,
+   "description": "e.g. Middelburg Mining Services"
+  },
+  {
+   "fieldname": "operation_definition",
+   "fieldtype": "Small Text",
+   "label": "Operation Definition",
+   "description": "Completes '\"[Operation]\" means ...', e.g. collectively, the operations of the Company at its client's [Seriti Power (Pty) Ltd] operations, situated at ..."
+  },
+  {
+   "fieldname": "column_break_scope",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "pricing_basis",
+   "fieldtype": "Data",
+   "label": "Pricing Basis",
+   "description": "Completes 'pay the Contractor on ... basis', e.g. a Rand per lighting plant, per month"
+  },
+  {
+   "fieldname": "clause_options",
+   "fieldtype": "Table MultiSelect",
+   "label": "Clause Options",
+   "options": "Contractor SLA Clause Option Item",
+   "description": "Optional clauses the template should include for this SLA."
+  },
+  {
+   "fieldname": "section_term",
+   "fieldtype": "Section Break",
+   "label": "Term"
+  },
+  {
+   "fieldname": "duration_basis",
+   "fieldtype": "Select",
+   "label": "Duration Basis",
+   "options": "Fixed Term\nProject Based",
+   "default": "Fixed Term",
+   "reqd": 1
+  },
+  {
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "label": "Start Date",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "end_date",
+   "fieldtype": "Date",
+   "label": "End Date",
+   "in_list_view": 1,
+   "mandatory_depends_on": "eval:doc.duration_basis=='Fixed Term'",
+   "description": "For Project Based SLAs, the expected end - it drives the expiry notices."
+  },
+  {
+   "fieldname": "mobilisation_days",
+   "fieldtype": "Int",
+   "label": "Mobilisation (working days)",
+   "default": "1",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "column_break_term",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "responsible_manager",
+   "fieldtype": "Link",
+   "label": "Responsible Manager",
+   "options": "User",
+   "allow_on_submit": 1,
+   "description": "Receives the expiry and unsigned notices."
+  },
+  {
+   "fieldname": "responsible_manager_name",
+   "fieldtype": "Data",
+   "label": "Responsible Manager Name",
+   "fetch_from": "responsible_manager.full_name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "renewal_of",
+   "fieldtype": "Link",
+   "label": "Renewal Of",
+   "options": "Contractor SLA",
+   "read_only": 1,
+   "no_copy": 1
+  },
+  {
+   "fieldname": "renewed_by",
+   "fieldtype": "Link",
+   "label": "Renewed By",
+   "options": "Contractor SLA",
+   "read_only": 1,
+   "no_copy": 1,
+   "allow_on_submit": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "options": "Contractor SLA",
+   "no_copy": 1,
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "tab_parties",
+   "fieldtype": "Tab Break",
+   "label": "Parties"
+  },
+  {
+   "fieldname": "section_company",
+   "fieldtype": "Section Break",
+   "label": "The Company",
+   "description": "Pre-filled from the last SLA for this Company (or the Company record); printed on the cover page and in the definitions."
+  },
+  {
+   "fieldname": "company_registration_no",
+   "fieldtype": "Data",
+   "label": "Registration No."
+  },
+  {
+   "fieldname": "company_address",
+   "fieldtype": "Small Text",
+   "label": "Address (Domicilium)"
+  },
+  {
+   "fieldname": "column_break_company",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "company_representative",
+   "fieldtype": "Data",
+   "label": "Represented By"
+  },
+  {
+   "fieldname": "company_representative_email",
+   "fieldtype": "Data",
+   "label": "Representative Email",
+   "options": "Email"
+  },
+  {
+   "fieldname": "section_supplier",
+   "fieldtype": "Section Break",
+   "label": "The Contractor",
+   "description": "Pre-filled from the last SLA with this Contractor (or the Supplier's primary address/contact)."
+  },
+  {
+   "fieldname": "supplier_registration_no",
+   "fieldtype": "Data",
+   "label": "Registration No."
+  },
+  {
+   "fieldname": "supplier_address",
+   "fieldtype": "Small Text",
+   "label": "Address (Domicilium)"
+  },
+  {
+   "fieldname": "column_break_supplier",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "supplier_representative",
+   "fieldtype": "Data",
+   "label": "Represented By"
+  },
+  {
+   "fieldname": "supplier_representative_email",
+   "fieldtype": "Data",
+   "label": "Representative Email",
+   "options": "Email"
+  },
+  {
+   "fieldname": "tab_services",
+   "fieldtype": "Tab Break",
+   "label": "Services & Pricing"
+  },
+  {
+   "fieldname": "services",
+   "fieldtype": "Table",
+   "label": "Services",
+   "options": "Contractor SLA Service",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_milestones",
+   "fieldtype": "Section Break",
+   "label": "Milestones"
+  },
+  {
+   "fieldname": "milestones",
+   "fieldtype": "Table",
+   "label": "Milestones",
+   "options": "Contractor SLA Milestone"
+  },
+  {
+   "fieldname": "section_rates",
+   "fieldtype": "Section Break",
+   "label": "Rates"
+  },
+  {
+   "fieldname": "rates",
+   "fieldtype": "Table",
+   "label": "Rates",
+   "options": "Contractor SLA Rate",
+   "reqd": 1
+  },
+  {
+   "fieldname": "total_monthly_value",
+   "fieldtype": "Currency",
+   "label": "Total Monthly Value",
+   "read_only": 1,
+   "options": "currency",
+   "in_list_view": 0,
+   "description": "Sum of the Rates table's amounts."
+  },
+  {
+   "fieldname": "currency",
+   "fieldtype": "Link",
+   "label": "Currency",
+   "options": "Currency",
+   "default": "ZAR",
+   "hidden": 1
+  },
+  {
+   "fieldname": "section_equipment",
+   "fieldtype": "Section Break",
+   "label": "Equipment"
+  },
+  {
+   "fieldname": "equipment",
+   "fieldtype": "Table",
+   "label": "Equipment",
+   "options": "Contractor SLA Equipment"
+  },
+  {
+   "fieldname": "section_special_terms",
+   "fieldtype": "Section Break",
+   "label": "Special Terms"
+  },
+  {
+   "fieldname": "special_terms",
+   "fieldtype": "Table",
+   "label": "Special Terms",
+   "options": "Contractor SLA Term"
+  },
+  {
+   "fieldname": "tab_penalties",
+   "fieldtype": "Tab Break",
+   "label": "Penalties"
+  },
+  {
+   "fieldname": "penalties",
+   "fieldtype": "Table",
+   "label": "Penalties",
+   "options": "Contractor SLA Penalty",
+   "description": "Copied from the template's defaults when the template is chosen."
+  },
+  {
+   "fieldname": "tab_wording",
+   "fieldtype": "Tab Break",
+   "label": "Agreement Wording"
+  },
+  {
+   "fieldname": "agreement_preview",
+   "fieldtype": "HTML",
+   "label": "Agreement Preview"
+  },
+  {
+   "fieldname": "rendered_agreement",
+   "fieldtype": "Long Text",
+   "label": "Rendered Agreement",
+   "hidden": 1,
+   "no_copy": 1,
+   "read_only": 1,
+   "ignore_xss_filter": 1,
+   "description": "The wording as rendered for this SLA (every value escaped); frozen once issued for signature."
+  },
+  {
+   "fieldname": "tab_signatures",
+   "fieldtype": "Tab Break",
+   "label": "Signatures"
+  },
+  {
+   "fieldname": "signature_status",
+   "fieldtype": "Select",
+   "label": "Signature Status",
+   "options": "Unsigned\nContractor Signed\nCompany Signed\nFully Signed",
+   "default": "Unsigned",
+   "read_only": 1,
+   "no_copy": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "sent_for_signature_on",
+   "fieldtype": "Date",
+   "label": "Issued for Signature On",
+   "read_only": 1,
+   "no_copy": 1,
+   "description": "Set by Issue for Signature; the wording is frozen from then on. Withdraw from Signature to change the terms."
+  },
+  {
+   "fieldname": "signed_copy",
+   "fieldtype": "Attach",
+   "label": "Signed Copy",
+   "no_copy": 1,
+   "description": "The agreement as signed by both parties. Required to submit."
+  },
+  {
+   "fieldname": "section_contractor_signature",
+   "fieldtype": "Section Break",
+   "label": "Contractor Signature"
+  },
+  {
+   "fieldname": "contractor_signed_on",
+   "fieldtype": "Date",
+   "label": "Signed On",
+   "no_copy": 1
+  },
+  {
+   "fieldname": "column_break_csig",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "contractor_signed_at",
+   "fieldtype": "Data",
+   "label": "Signed At (Place)",
+   "no_copy": 1
+  },
+  {
+   "fieldname": "section_company_signature",
+   "fieldtype": "Section Break",
+   "label": "Company Signature"
+  },
+  {
+   "fieldname": "company_signed_on",
+   "fieldtype": "Date",
+   "label": "Signed On",
+   "no_copy": 1
+  },
+  {
+   "fieldname": "column_break_cosig",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "company_signed_at",
+   "fieldtype": "Data",
+   "label": "Signed At (Place)",
+   "no_copy": 1
+  },
+  {
+   "fieldname": "section_termination",
+   "fieldtype": "Section Break",
+   "label": "Termination",
+   "depends_on": "eval:doc.terminated_on"
+  },
+  {
+   "fieldname": "terminated_on",
+   "fieldtype": "Date",
+   "label": "Terminated On",
+   "read_only": 1,
+   "allow_on_submit": 1,
+   "no_copy": 1
+  },
+  {
+   "fieldname": "sla_termination",
+   "fieldtype": "Link",
+   "label": "Termination",
+   "options": "Contractor SLA Termination",
+   "read_only": 1,
+   "allow_on_submit": 1,
+   "no_copy": 1
+  },
+  {
+   "fieldname": "column_break_term_info",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "termination_reason",
+   "fieldtype": "Small Text",
+   "label": "Termination Reason",
+   "read_only": 1,
+   "allow_on_submit": 1,
+   "no_copy": 1
+  },
+  {
+   "fieldname": "section_notices",
+   "fieldtype": "Section Break",
+   "label": "Notices",
+   "hidden": 1
+  },
+  {
+   "fieldname": "expiry_notices_sent",
+   "fieldtype": "Data",
+   "label": "Expiry Notices Sent",
+   "read_only": 1,
+   "allow_on_submit": 1,
+   "no_copy": 1,
+   "hidden": 1,
+   "description": "Days-before-expiry thresholds already notified (-1 = expired)."
+  },
+  {
+   "fieldname": "last_outstanding_notice_on",
+   "fieldtype": "Date",
+   "label": "Last Unsigned Notice On",
+   "read_only": 1,
+   "allow_on_submit": 1,
+   "no_copy": 1,
+   "hidden": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 0,
+ "is_submittable": 1,
+ "links": [
+  {
+   "group": "Performance",
+   "link_doctype": "Contractor Non-Conformance",
+   "link_fieldname": "contractor_sla"
+  },
+  {
+   "group": "Performance",
+   "link_doctype": "Contractor Warning",
+   "link_fieldname": "contractor_sla"
+  },
+  {
+   "group": "Termination",
+   "link_doctype": "Contractor SLA Termination",
+   "link_fieldname": "contractor_sla"
+  },
+  {
+   "group": "Renewals",
+   "link_doctype": "Contractor SLA",
+   "link_fieldname": "renewal_of"
+  }
+ ],
+ "modified": "2026-10-15 15:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Procurement",
+ "name": "Contractor SLA",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "role": "System Manager",
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "share": 1,
+   "write": 1,
+   "amend": 1,
+   "cancel": 1,
+   "submit": 1,
+   "select": 1
+  },
+  {
+   "role": "Procurement Manager",
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "share": 1,
+   "write": 1,
+   "amend": 1,
+   "cancel": 1,
+   "submit": 1,
+   "select": 1
+  },
+  {
+   "role": "Procurement Admin",
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "select": 1,
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "role": "Procurement User",
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "select": 1,
+   "share": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "search_fields": "sla_title,supplier_name,status",
+ "show_title_field_in_link": 1,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "sla_title",
+ "track_changes": 1
+}

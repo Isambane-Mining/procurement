@@ -1,0 +1,87 @@
+/* ../../../../../tmp/tmp-1258861-wcG5D7apwgXq/procurement/procurement/public/css/sla_agreement.bundle.css */
+.sla-wording {
+  line-height: 1.5;
+}
+.sla-wording table.sla-clauses {
+  width: 100%;
+  border-collapse: collapse;
+}
+.sla-wording table.sla-clauses td {
+  vertical-align: top;
+  padding: 4px 6px;
+}
+.sla-wording td.sla-no {
+  white-space: nowrap;
+  width: 5em;
+  padding-left: 10px;
+}
+.sla-wording tr.sla-heading td {
+  font-weight: 700;
+  padding-top: 14px;
+}
+.sla-wording .sla-part {
+  margin-top: 24px;
+  padding-top: 12px;
+  border-top: 2px dashed var(--border-color, #ccc);
+}
+.sla-wording .sla-part-title {
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.1em;
+  margin: 8px 0;
+}
+.sla-wording .sla-table-caption {
+  font-style: italic;
+  color: var(--text-muted, #1f3864);
+  margin: 10px 0 4px;
+  font-size: 0.9em;
+}
+.sla-wording table.sla-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 6px 0 12px;
+}
+.sla-wording table.sla-table th,
+.sla-wording table.sla-table td {
+  border: 1px solid var(--border-color, #333);
+  padding: 3px 6px;
+  vertical-align: top;
+}
+.sla-wording table.sla-table th {
+  font-weight: 700;
+  text-align: right;
+}
+.sla-wording .sla-right {
+  text-align: left;
+}
+.sla-wording .sla-center {
+  text-align: center;
+}
+.sla-wording .sla-signature {
+  margin: 20px 0;
+}
+.sla-wording table.sla-signature-table {
+  width: 100%;
+}
+.sla-wording table.sla-signature-table td {
+  width: 50%;
+  padding: 4px 0;
+  vertical-align: top;
+}
+.sla-wording tr.sla-sign-row td {
+  padding-top: 26px;
+}
+.sla-preview-var {
+  background: var(--bg-blue);
+  color: var(--text-on-blue);
+  border-radius: 4px;
+  padding: 0 3px;
+}
+.sla-agreement-preview {
+  max-height: 75vh;
+  overflow: auto;
+  padding: 12px 16px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+}
+/*# sourceMappingURL=sla_agreement.bundle.RAUYJWKZ.css.map */

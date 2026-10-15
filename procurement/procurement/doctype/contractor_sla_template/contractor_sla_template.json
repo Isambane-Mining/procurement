@@ -1,0 +1,172 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "creation": "2026-10-15 15:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "tab_template",
+  "template_name",
+  "document_title",
+  "column_break_tpl",
+  "description",
+  "amended_from",
+  "section_wording",
+  "text_editor",
+  "sla_wording",
+  "tab_penalties",
+  "penalties",
+  "tab_markdown",
+  "sla_markdown"
+ ],
+ "fields": [
+  {
+   "fieldname": "tab_template",
+   "fieldtype": "Tab Break",
+   "label": "Template"
+  },
+  {
+   "fieldname": "template_name",
+   "fieldtype": "Data",
+   "label": "Template Name",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "document_title",
+   "fieldtype": "Data",
+   "label": "Document Title",
+   "default": "SERVICE LEVEL AGREEMENT",
+   "description": "Printed at the top of the cover page."
+  },
+  {
+   "fieldname": "column_break_tpl",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Description"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "options": "Contractor SLA Template",
+   "no_copy": 1,
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "section_wording",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "text_editor",
+   "fieldtype": "HTML",
+   "label": "SLA Wording"
+  },
+  {
+   "fieldname": "sla_wording",
+   "fieldtype": "JSON",
+   "label": "SLA Wording Data",
+   "hidden": 1,
+   "description": "Editor content (Quill Delta). Edited through the SLA Wording editor, never directly."
+  },
+  {
+   "fieldname": "tab_penalties",
+   "fieldtype": "Tab Break",
+   "label": "Default Penalties"
+  },
+  {
+   "fieldname": "penalties",
+   "fieldtype": "Table",
+   "label": "Default Penalties",
+   "options": "Contractor SLA Penalty",
+   "description": "Copied onto a new SLA when this template is chosen; edit them per SLA."
+  },
+  {
+   "fieldname": "tab_markdown",
+   "fieldtype": "Tab Break",
+   "label": "Markdown (Power Users)"
+  },
+  {
+   "fieldname": "sla_markdown",
+   "fieldtype": "Code",
+   "label": "SLA Markdown",
+   "options": "Markdown",
+   "description": "The same wording as the editor, kept in step both ways. <b>##</b> Annexure (restarts numbering) &middot; <b>#</b> Heading &middot; <b>1.</b> Clause (indent 4 spaces per level) &middot; plain line = unnumbered text &middot; <b>**bold**</b> <b>*italic*</b> <b>&lt;u&gt;underline&lt;/u&gt;</b> &middot; <b>{{variable}}</b> &middot; <b>[label](#anchor)</b> reference &middot; line options at the end: <b>{#anchor when=duration:fixed repeat=services}</b> (quote values with spaces: when=\"option:Diesel Supplied by Company\") &middot; escape * { [ &lt; with \\."
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 0,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2026-10-15 15:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Procurement",
+ "name": "Contractor SLA Template",
+ "naming_rule": "By script",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "role": "System Manager",
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "share": 1,
+   "write": 1,
+   "amend": 1,
+   "cancel": 1,
+   "submit": 1,
+   "select": 1
+  },
+  {
+   "role": "Procurement Manager",
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "share": 1,
+   "write": 1,
+   "amend": 1,
+   "cancel": 1,
+   "submit": 1,
+   "select": 1
+  },
+  {
+   "role": "Procurement Admin",
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "select": 1,
+   "share": 1
+  },
+  {
+   "role": "Procurement User",
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "select": 1,
+   "share": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "template_name",
+ "track_changes": 1
+}

@@ -1,0 +1,23 @@
+{
+ "aggregate_function_based_on": "",
+ "color": "#FF5858",
+ "creation": "2026-10-15 09:00:00.000000",
+ "docstatus": 0,
+ "doctype": "Number Card",
+ "document_type": "Contractor SLA",
+ "dynamic_filters_json": "[]",
+ "filters_json": "[[\"Contractor SLA\",\"status\",\"=\",\"Outstanding\",false]]",
+ "function": "Count",
+ "idx": 0,
+ "is_public": 1,
+ "is_standard": 1,
+ "label": "Contractor SLAs Awaiting Signature",
+ "modified": "2026-10-15 09:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Procurement",
+ "name": "Contractor SLAs Awaiting Signature",
+ "owner": "Administrator",
+ "show_percentage_stats": 0,
+ "stats_time_interval": "Daily",
+ "type": "Document Type"
+}

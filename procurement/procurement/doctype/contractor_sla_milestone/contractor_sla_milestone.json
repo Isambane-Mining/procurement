@@ -1,0 +1,44 @@
+{
+ "actions": [],
+ "creation": "2026-10-15 15:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "milestone_description",
+  "due_date"
+ ],
+ "fields": [
+  {
+   "fieldname": "milestone_description",
+   "fieldtype": "Small Text",
+   "label": "Milestone",
+   "reqd": 1,
+   "in_list_view": 1,
+   "columns": 7,
+   "description": "e.g. Nine (9) units delivered"
+  },
+  {
+   "fieldname": "due_date",
+   "fieldtype": "Date",
+   "label": "Due Date",
+   "reqd": 1,
+   "in_list_view": 1,
+   "columns": 3
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 0,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-10-15 15:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Procurement",
+ "name": "Contractor SLA Milestone",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

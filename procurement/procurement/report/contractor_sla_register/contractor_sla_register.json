@@ -1,0 +1,36 @@
+{
+ "add_total_row": 0,
+ "columns": [],
+ "creation": "2026-10-15 09:00:00.000000",
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [],
+ "idx": 0,
+ "is_standard": "Yes",
+ "letterhead": null,
+ "modified": "2026-10-15 09:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Procurement",
+ "name": "Contractor SLA Register",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "ref_doctype": "Contractor SLA",
+ "report_name": "Contractor SLA Register",
+ "report_type": "Script Report",
+ "roles": [
+  {
+   "role": "System Manager"
+  },
+  {
+   "role": "Procurement Manager"
+  },
+  {
+   "role": "Procurement Admin"
+  },
+  {
+   "role": "Procurement User"
+  }
+ ],
+ "timeout": 0
+}

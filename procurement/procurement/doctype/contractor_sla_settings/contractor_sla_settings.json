@@ -1,0 +1,106 @@
+{
+ "actions": [],
+ "creation": "2026-10-15 15:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_expiry",
+  "expiry_warning_days",
+  "expiry_reminder_days",
+  "column_break_exp",
+  "outstanding_reminder_interval",
+  "section_recipients",
+  "notify_role",
+  "send_email"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_expiry",
+   "fieldtype": "Section Break",
+   "label": "Expiry"
+  },
+  {
+   "fieldname": "expiry_warning_days",
+   "fieldtype": "Int",
+   "label": "Expiry Warning Window (days)",
+   "default": "90",
+   "reqd": 1,
+   "non_negative": 1,
+   "description": "An SLA within this many days of its End Date shows as Expiring Soon."
+  },
+  {
+   "fieldname": "expiry_reminder_days",
+   "fieldtype": "Data",
+   "label": "Expiry Notices At (days before End Date)",
+   "default": "90, 60, 30, 14, 7",
+   "description": "Comma-separated. One notice goes out as each threshold is reached, plus one on expiry."
+  },
+  {
+   "fieldname": "column_break_exp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "outstanding_reminder_interval",
+   "fieldtype": "Int",
+   "label": "Unsigned Reminder Interval (days)",
+   "default": "7",
+   "non_negative": 1,
+   "description": "While a submitted SLA is not fully signed, remind every this many days. 0 = never."
+  },
+  {
+   "fieldname": "section_recipients",
+   "fieldtype": "Section Break",
+   "label": "Recipients"
+  },
+  {
+   "fieldname": "notify_role",
+   "fieldtype": "Link",
+   "label": "Also Notify Role",
+   "options": "Role",
+   "default": "Procurement Manager",
+   "description": "Besides the SLA's Responsible Manager and its creator."
+  },
+  {
+   "fieldname": "send_email",
+   "fieldtype": "Check",
+   "label": "Send Email",
+   "default": "1",
+   "description": "Notices always appear in the desk notification bell; tick to also email them."
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 0,
+ "issingle": 1,
+ "links": [],
+ "modified": "2026-10-15 15:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Procurement",
+ "name": "Contractor SLA Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "role": "System Manager",
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "share": 1,
+   "write": 1
+  },
+  {
+   "role": "Procurement Manager",
+   "create": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}
