@@ -15,7 +15,6 @@
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Buyer",
-   "link_filters": "[[\"User\",\"role\",\"=\",\"Procurement Admin\"]]",
    "options": "User",
    "reqd": 1,
    "unique": 1
@@ -29,7 +28,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-10-08 14:42:23.426176",
+ "modified": "2026-10-16 06:54:56.021513",
  "modified_by": "Administrator",
  "module": "Procurement",
  "name": "Buyer Site Allocation",

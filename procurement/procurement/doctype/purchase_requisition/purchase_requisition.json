@@ -242,7 +242,6 @@
    "fieldname": "buyer",
    "fieldtype": "Link",
    "label": "Buyer",
-   "link_filters": "[[\"User\",\"role\",\"=\",\"Procurement Admin\"],[\"User\",\"enabled\",\"=\",1]]",
    "options": "User",
    "permlevel": 1
   },
@@ -316,7 +315,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-10-08 14:42:23.424027",
+ "modified": "2026-10-16 06:54:56.022154",
  "modified_by": "Administrator",
  "module": "Procurement",
  "name": "Purchase Requisition",
